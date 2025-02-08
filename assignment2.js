@@ -2,7 +2,7 @@
 
 /*
 
-What if I ask you the following question — Give me an input string that outputs a SHA-256 hash that starts with 00000 . How will you do it?
+What if I ask you the following question — Give me an input string that outputs a SHA-256 hash that starts with 100xdev . How will you do it?
 
 A: You will have to brute force until you find a value that starts with 00000
 
@@ -27,7 +27,7 @@ function sha256Hash(data) {
 
 var input=0;
 while(true){
-  if(sha256Hash(input).startsWith("0000"))
+  if(sha256Hash(input).startsWith("100xdevs"))
      {
         console.log(input);
     break;
