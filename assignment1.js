@@ -27,7 +27,7 @@ function sha256Hash(data) {
 
 var input=0;
 while(true){
-  if(sha256Hash(input).startsWith("0000"))
+  if(sha256Hash("100xdev"+input.toString()).startsWith("0000"))
      {
         console.log(input);
     break;
