@@ -25,16 +25,4 @@ function sha256Hash(data) {
 
 // console.log("SHA-256 Hash:", sha256Hash(input));
 
-var input=0;
-while(true){
-  if(sha256Hash(input).startsWith("100xdevs"))
-     {
-        console.log(input);
-    break;
-  }
-      else{
-        input++;
-          }
-
-}
-console.log(sha256Hash(input));
+console.log(sha256Hash("100xdevs"));
