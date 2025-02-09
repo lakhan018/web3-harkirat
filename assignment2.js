@@ -14,15 +14,24 @@ Output: 00000691457f4f0ce13e187b9ab4fda6d42c8647752909b8f71f9dbd8f6bd4ab
 
 */
 
-// Function to find an input string that produces a hash starting with '00000'
 const crypto = require('crypto');
 
-function sha256Hash(data) {
-    return crypto.createHash('sha256').update(data.toString()).digest('hex');
+function findHash(input, prefix) {
+    let number = 0;
+    while (true) {
+        const testString = input + number;
+        const hash = crypto.createHash('sha256').update(testString).digest('hex');
+
+        if (hash.startsWith(prefix)) {
+            return { number, hash };
+        }
+        number++;
+    }
 }
 
-// const input = "Hello, World!";
+const input = "100xdevs";
+const prefix = "00000";
 
-// console.log("SHA-256 Hash:", sha256Hash(input));
-
-console.log(sha256Hash("100xdevs"));
+const result = findHash(input, prefix);
+console.log(`Number: ${result.number}`);
+console.log(`Hash: ${result.hash}`);
