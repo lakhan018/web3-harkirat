@@ -19,19 +19,21 @@ const crypto = require('crypto');
 function findHash(input, prefix) {
     let number = 0;
     while (true) {
-        const testString = input + number;
+        const testString = "100xdevs"+input + number;
         const hash = crypto.createHash('sha256').update(testString).digest('hex');
 
         if (hash.startsWith(prefix)) {
-            return { number, hash };
+            return {input, number, hash };
         }
         number++;
     }
 }
 
-const input = "100xdevs";
+const input = "lakhan=>Raman|Rs100Ram=>Ankit|Rs101935085";
 const prefix = "00000";
 
 const result = findHash(input, prefix);
 console.log(`Number: ${result.number}`);
 console.log(`Hash: ${result.hash}`);
+console.log(`Input: ${result.input}`);
+
