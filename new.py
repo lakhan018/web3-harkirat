@@ -11,7 +11,6 @@ def best_first_search(graph, start, goal, heuristic):
 
         if current in visited:
             continue
-
         visited.add(current)
 
         if current == goal:
